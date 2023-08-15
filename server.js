@@ -20,8 +20,8 @@ app.use(cors({
 
 //////////////////
 const pool = new Pool({
-  // host: 'local_pgdb',
-  host: 'localhost',
+  host: 'local_pgdb',
+  // host: 'localhost',
   database: 'admin',
   user: 'admin',
   password: 'k304298',
@@ -30,7 +30,7 @@ const pool = new Pool({
 pool.connect();
 //////////////////
 app.use(express.static(__dirname + "/public"));
-app.use('/:tagID', express.static(__dirname + "/public"));
+app.use('bat/:tagID', express.static(__dirname + "/public"));
 
 
 const g2 = ["seconds", "minutes", "hours", "days", "weeks", "months", "year"];
@@ -69,7 +69,6 @@ app.post('/batinfo/:tagId', (req, res) => {
       "where id = " + id +
       " group by datetime " +
       "order by datetime desc limit  " + num_sample;
-    // console.log(sq)
     pool.query(
       sq,
       (err, res2) => {
@@ -93,19 +92,61 @@ app.post('/addData', (req, res) => {
   //   return res.status(400).json({ err: "Numbers only, please!" });
   // }
   try {
+    var data = {
+      id: 0,
+      date: "'2023/05/18'",
+      time: "'13:50:10'",
+      voltage: 50.49,
+      current: 7.47,
+      cell1: 3.867,
+      cell2: 3.887,
+      cell3: 3.885,
+      cell4: 3.886,
+      cell5: 3.883,
+      cell6: 3.887,
+      cell7: 3.884,
+      cell8: 3.885,
+      cell9: 3.884,
+      cell10: 3.883,
+      cell11: 3.886,
+      cell12: 3.885,
+      cell13: 3.89,
+      avg_cell: 3.884,
+      max_cell: 3.89,
+      min_cell: 3.867,
+      soc: 67,
+      remaincap: 27000,
+      fcc: 40000,
+      cycle: 0,
+      temp1: 37.5,
+      temp2: 37.5,
+      temp3: 37.4,
+      temp4: 37.1,
+      c_fet: "'ON'",
+      d_fet: "'ON'",
+      protectstatus: "null",
+      balancestatus: 0
+    }
+
+    data_all = ''
+    all_key = ''
+    Object.entries(json).forEach(([key, value]) => {
+      data_all += value + (key == 'balancestatus' ? '' : ',')
+      all_key += key + (key == 'balancestatus' ? '' : ',')
+    });
+
 
     pool.query(
-      "INSERT INTO public.battery (id, date, time, voltage, current, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9, cell10, cell11, cell12, cell13, avg_cell, max_cell, min_cell, soc, remaincap, fcc, cycle, temp1, temp2, temp3, temp4, c_fet, d_fet, protectstatus, balancestatus) " +
-      " VALUES (2,'2023/05/18','13:50:10',50.49,7.47,3.867,3.887,3.885,3.886,3.883,3.887,3.884,3.885,3.884,3.883,3.886,3.885,3.89,3.884,3.89,3.867,67,27000,40000,0,37.5,37.5,37.4,37.1,'ON','ON',null,0)"
+      "INSERT INTO public.battery (" + all_key + ") " +
+      " VALUES (" + data_all + ")"
       , (err, res2) => {
         console.log(err)
-
       })
+
   } catch (error) {
 
   }
 })
-
 
 
 app.listen(port, () => {
