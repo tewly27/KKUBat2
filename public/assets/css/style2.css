@@ -1,0 +1,68 @@
+.table th {
+  color: white !important;
+}
+
+.table {
+  color: white;
+}
+
+.dataTabale td {
+  border-width: 0 !important;
+}
+
+.page-link {
+  background-color: #000000 !important;
+  border: none;
+}
+
+.sorting {
+  cursor: pointer;
+}
+
+input {
+  color: white !important;
+}
+
+select {
+  color: white !important;
+}
+
+.dataTables_filter {
+  text-align: right;
+}
+
+.dataTables_filter label {
+  font-weight: normal;
+  white-space: nowrap;
+  text-align: left;
+}
+
+div.dt-datetime {
+  background-color: #191c24;
+  color: white;
+}
+
+div.dt-datetime table td {
+  color: inherit;
+}
+
+div.dt-datetime table td.selectable {
+  background: none;
+}
+
+div.dt-datetime table td.selectable.now button {
+  background: #00d25b;
+
+}
+
+div.dt-datetime table td.selectable button:hover {
+  background: #ff8000;
+  color: white;
+  border-radius: 2px;
+}
+
+div.dt-datetime div.dt-datetime-label:hover {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  background-color: inherit;
+}
