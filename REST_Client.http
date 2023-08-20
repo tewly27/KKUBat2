@@ -5,7 +5,8 @@ POST http://localhost:8080/addData
 Content-Type: application/json
 
 {
-      "id": 46525684,
+      "id": 46525684
+      ,
       "date": "'2023/05/18'",
       "time": "'13:50:10'",
       "voltage": 50.49,
@@ -43,7 +44,11 @@ Content-Type: application/json
 
 
 ###########
+GET  http://localhost:8080
 
+
+
+###########
 
 POST https://iot.jiabaida.com/api/login
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryzLnB4KNcgDOCuicz

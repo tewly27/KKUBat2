@@ -10,9 +10,9 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: k304298
     volumes:
-      - local_pgdata:/var/lib/postgresql/data/
+      - local_pgdata:/var/lib/postgresql/data
       - ./docker_postgres_init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
-    #   - ./local_pgdata/data/postgresql.conf:/etc/postgresql/postgresql.conf
+      - ./local_pgdata/data/pgdata/data4.csv:/data4.csv
     # command: postgres -c config_file=/etc/postgresql/postgresql.conf
 
   pgadmin:
@@ -20,22 +20,23 @@ services:
     container_name: pgadmin4_container
     restart: always
     ports:
-      - "5050:80"
+      - "5050:5050"
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@kku.ac.th
       PGADMIN_DEFAULT_PASSWORD: k304298
+      PGADMIN_LISTEN_PORT: 5050
     volumes:
       - pgadmin-data:/var/lib/pgadmin
 
-  webapp:
-    container_name: uvolt
-    restart: always
-    build: .
-    ports:
-      # - "443:8443"
-      - "80:8080"
-    depends_on:
-      - db
+  # webapp:
+  #   container_name: uvolt
+  #   restart: always
+  #   build: .
+  #   ports:
+  #     # - "443:8443"
+  #     - "80:8080"
+  #   depends_on:
+  #     - db
 volumes:
   local_pgdata:
   pgadmin-data:

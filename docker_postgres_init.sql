@@ -42,5 +42,11 @@ CREATE TABLE IF NOT EXISTS battery (
 
 );
 
+CREATE TABLE IF NOT EXISTS batteryowner (
+	id INTEGER,
+	name text
 
+);
 
+copy public.battery (id,date,time,voltage,current,cell1,cell2,cell3,cell4,cell5,cell6,cell7,cell8,cell9,cell10,cell11,cell12,cell13,avg_cell,max_cell,min_cell,soc,remaincap,fcc,cycle,temp1,temp2,temp3,temp4,c_fet,d_fet,protectstatus,balancestatus)  
+FROM '/data4.csv' CSV HEADER;

@@ -29,9 +29,9 @@
     <!-- partial:../../partials/_sidebar.html -->
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-        <a class="sidebar-brand brand-logo" href="../../index.html"><img src="../../assets/images/icon.png" alt="logo"
+        <a class="sidebar-brand brand-logo" href=""><img src="../../assets/images/icon.png" alt="logo"
             style="height: auto;" /></a>
-        <a class="sidebar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/icon-mini.png"
+        <a class="sidebar-brand brand-logo-mini" href=""><img src="../../assets/images/icon-mini.png"
             alt="logo" style="height: auto;width: auto;" /></a>
       </div>
       <ul class="nav">
@@ -39,7 +39,7 @@
           <span class="nav-link">Navigation</span>
         </li>
         <li class="nav-item menu-items">
-          <a class="nav-link" href="../../pages/tables/table.html">
+          <a class="nav-link" href="">
             <span class="menu-icon">
               <i class="mdi mdi-table-large"></i>
             </span>
@@ -91,7 +91,7 @@
                 <div class="card-body">
                   <h4 class="card-title">Device Table</h4>
                   <div>
-                    <table>
+                    <!-- <table>
                       <tbody>
                         <tr>
                           <td>Minimum date:</td>
@@ -102,7 +102,7 @@
                           <td><input type="text" class="form-control form-control-sm" id="max" name="max"></td>
                         </tr>
                       </tbody>
-                    </table>
+                    </table> -->
                     <table class="table table-striped table-bordered table-sm" id="example">
                       <thead>
                         <tr>
@@ -116,7 +116,7 @@
                       <tbody>
                         <tr>
                           <td class="py-1">
-                            <a href="">0868755123661050</a>
+                            <a href="/device/0868755123661050">0868755123661050</a>
                           </td>
                           <td> Mr. A </td>
                           <td>
@@ -369,29 +369,29 @@
     let minDate, maxDate;
 
     // Custom filtering function which will search data in column four between two values
-    DataTable.ext.search.push(function (settings, data, dataIndex) {
-      let min = minDate.val();
-      let max = maxDate.val();
-      let date = new Date(data[4]);
+    // DataTable.ext.search.push(function (settings, data, dataIndex) {
+    //   let min = minDate.val();
+    //   let max = maxDate.val();
+    //   let date = new Date(data[4]);
 
-      if (
-        (min === null && max === null) ||
-        (min === null && date <= max) ||
-        (min <= date && max === null) ||
-        (min <= date && date <= max)
-      ) {
-        return true;
-      }
-      return false;
-    });
+    //   if (
+    //     (min === null && max === null) ||
+    //     (min === null && date <= max) ||
+    //     (min <= date && max === null) ||
+    //     (min <= date && date <= max)
+    //   ) {
+    //     return true;
+    //   }
+    //   return false;
+    // });
 
-    // Create date inputs
-    minDate = new DateTime('#min', {
-      format: 'MMMM Do YYYY'
-    });
-    maxDate = new DateTime('#max', {
-      format: 'MMMM Do YYYY'
-    });
+    // // Create date inputs
+    // minDate = new DateTime('#min', {
+    //   format: 'MMMM Do YYYY'
+    // });
+    // maxDate = new DateTime('#max', {
+    //   format: 'MMMM Do YYYY'
+    // });
 
     // DataTables initialisation
     let table = new DataTable('#example');

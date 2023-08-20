@@ -4,6 +4,7 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 8080;
 const https = require('https');
+const path = require('path');
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -30,13 +31,17 @@ const pool = new Pool({
 pool.connect();
 //////////////////
 app.use(express.static(__dirname + "/public"));
-app.use('bat/:tagID', express.static(__dirname + "/public"));
+app.use('/device/:tagID', express.static(__dirname + "/public"));
 
 
 const g2 = ["seconds", "minutes", "hours", "days", "weeks", "months", "year"];
 
-
-
+app.get('/device/:tagID', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/index.html'));
+});
+app.get('/table', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/pages/tables/table.html'));
+});
 app.post('/batinfo/:tagId', (req, res) => {
   try {
     var id = req.params.tagId
@@ -135,12 +140,13 @@ app.post('/addData', (req, res) => {
       all_key += key + (key == 'balancestatus' ? '' : ',')
     });
 
-
+    console.log("INSERT INTO public.battery (" + all_key + ") " +
+      " VALUES (" + data_all + ")")
     pool.query(
       "INSERT INTO public.battery (" + all_key + ") " +
       " VALUES (" + data_all + ")"
       , (err, res2) => {
-        console.log(err)
+        res.json("success");
       })
 
   } catch (error) {
