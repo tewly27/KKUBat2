@@ -28,15 +28,15 @@ services:
     volumes:
       - pgadmin-data:/var/lib/pgadmin
 
-  # webapp:
-  #   container_name: uvolt
-  #   restart: always
-  #   build: .
-  #   ports:
-  #     # - "443:8443"
-  #     - "80:8080"
-  #   depends_on:
-  #     - db
+  webapp:
+    container_name: uvolt
+    restart: always
+    build: .
+    ports:
+      # - "443:8443"
+      - "80:8080"
+    depends_on:
+      - db
 volumes:
   local_pgdata:
   pgadmin-data:
