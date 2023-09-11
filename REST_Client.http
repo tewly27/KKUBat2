@@ -1,7 +1,7 @@
 
 
 
-POST http://localhost:8080/addData
+POST http://localhost:80/addData
 Content-Type: application/json
 
 {
@@ -44,7 +44,7 @@ Content-Type: application/json
 
 
 ###########
-GET  http://localhost:8080
+POST   http://localhost:80/batinfo/46525684
 
 
 
