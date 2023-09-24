@@ -31,9 +31,9 @@
     <!-- partial:partials/_sidebar.html -->
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-        <a class="sidebar-brand brand-logo" href="../../table"><img src="assets/images/icon.png" alt="logo"
+        <a class="sidebar-brand brand-logo" href="/"><img src="assets/images/icon.png" alt="logo"
             style="height: auto;" /></a>
-        <a class="sidebar-brand brand-logo-mini" href="../../table"><img src="assets/images/icon-mini.png" alt="logo"
+        <a class="sidebar-brand brand-logo-mini" href="/"><img src="assets/images/icon-mini.png" alt="logo"
             style="height: auto;width: auto;" /></a>
       </div>
       <ul class="nav">
@@ -41,7 +41,7 @@
           <span class="nav-link">Navigation</span>
         </li>
         <li class="nav-item menu-items">
-          <a class="nav-link" href="../../table">
+          <a class="nav-link" href="/">
             <span class="menu-icon">
               <i class="mdi mdi-table-large"></i>
             </span>
@@ -115,7 +115,7 @@
                     <div class="col-9">
                       <div class="d-flex align-items-center align-self-start">
                         <h3 class="mb-0 " id="voltage">72.34 Volt</h3>
-                        <p class="text-success ml-2 mb-0 font-weight-medium">good</p>
+                        <!-- <p class="text-success ml-2 mb-0 font-weight-medium">good</p> -->
                       </div>
                     </div>
                   </div>
@@ -150,7 +150,7 @@
                     <div class="col-9">
                       <div class="d-flex align-items-center align-self-start">
                         <h3 class="mb-0" id="soc">74 % / 14.84 Ah</h3>
-                        <p class="text-success ml-2 mb-0 font-weight-medium">good</p>
+                        <!-- <p class="text-success ml-2 mb-0 font-weight-medium">good</p> -->
                       </div>
                     </div>
                   </div>
@@ -167,7 +167,7 @@
                     <div class="col-9">
                       <div class="d-flex align-items-center align-self-start">
                         <h3 class="mb-0" id="cycle">123 cycle</h3>
-                        <p class="text-warning ml-2 mb-0 font-weight-medium">warning</p>
+                        <!-- <p class="text-warning ml-2 mb-0 font-weight-medium">warning</p> -->
                       </div>
                     </div>
                   </div>
@@ -499,8 +499,8 @@
         console.log(response)
         document.getElementById("id").textContent = "IMEI:" + window.location.pathname.split('/')[2];
         document.getElementById("time").textContent = response.rows[0].date;
-        document.getElementById("voltage").textContent = response.rows[0].packVoltage + " Volt";
-        document.getElementById("current").textContent = response.rows[0].packCurrent + " Amps";
+        document.getElementById("voltage").textContent = response.rows[0].voltage + " Volt";
+        document.getElementById("current").textContent = response.rows[0].current + " Amps";
 
         document.getElementById("soc").textContent = response.rows[0].soc + " % " + " / " + response.rows[0].remaincap + " Ah";
         document.getElementById("cycle").textContent = response.rows[0].cycle + ' cycle';
@@ -549,9 +549,6 @@
         document.getElementById("balancestatus").textContent = response.rows[0].balancestatus;
 
 
-        request3.open('GET', window.location.protocol + '//' + window.location.host + '/readGPS/' + response.rows[0].id, true);
-        deviceID = response.rows[0].id
-        request3.send();
       }
     };
 
