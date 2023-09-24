@@ -5,23 +5,21 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>KKUVolt Admin</title>
+  <title>Corona Admin</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="assets/vendors/jvectormap/jquery-jvectormap.css">
-  <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
-  <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.carousel.min.css">
-  <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.theme.default.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <!-- endinject -->
   <!-- Layout styles -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/datetime/1.5.1/css/dataTables.dateTime.min.css">
 
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/style2.css">
+
   <!-- End layout styles -->
   <link rel="shortcut icon" href="assets/images/icon-mini.png" />
 </head>
@@ -31,40 +29,23 @@
     <!-- partial:partials/_sidebar.html -->
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-        <a class="sidebar-brand brand-logo" href="../../table"><img src="assets/images/icon.png" alt="logo"
+        <a class="sidebar-brand brand-logo" href=""><img src="assets/images/icon.png" alt="logo"
             style="height: auto;" /></a>
-        <a class="sidebar-brand brand-logo-mini" href="../../table"><img src="assets/images/icon-mini.png" alt="logo"
-            style="height: auto;width: auto;" /></a>
+        <a class="sidebar-brand brand-logo-mini" href=""><img src="assets/images/icon-mini.png"
+            alt="logo" style="height: auto;width: auto;" /></a>
       </div>
       <ul class="nav">
         <li class="nav-item nav-category">
           <span class="nav-link">Navigation</span>
         </li>
         <li class="nav-item menu-items">
-          <a class="nav-link" href="../../table">
+          <a class="nav-link" href="">
             <span class="menu-icon">
               <i class="mdi mdi-table-large"></i>
             </span>
             <span class="menu-title">Device Tables</span>
           </a>
         </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" href="">
-            <span class="menu-icon">
-              <i class="mdi mdi-speedometer"></i>
-            </span>
-            <span class="menu-title">Dashboard</span>
-          </a>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" href="pages/map/map.html">
-            <span class="menu-icon">
-              <i class="mdi mdi-map-marker"></i>
-            </span>
-            <span class="menu-title">Map view</span>
-          </a>
-        </li>
-
 
       </ul>
     </nav>
@@ -73,8 +54,8 @@
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar p-0 fixed-top d-flex flex-row">
         <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/icon-mini.png"
-              style="height: auto;width: auto;" alt="logo" /></a>
+          <a class="navbar-brand brand-logo-mini" href=""><img src="assets/images/logo-mini.svg"
+              alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -83,7 +64,7 @@
           <ul class="navbar-nav w-100">
             <li class="nav-item w-100">
               <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-                <input type="text" class="form-control" placeholder="Search Device">
+                <input type="text" class="form-control" placeholder="Search products">
               </form>
             </li>
           </ul>
@@ -99,373 +80,72 @@
         <div class="content-wrapper">
           <div class="row">
             <div class="col">
-              <h3>IMEI:0868755125135442 </h3>
-              <label class="badge badge-success">Online</label>
-              <h7>21/06/2023 15:41:19</h7>
+              <h3>All Device Status </h3>
+              <h6>Online : 3</h6>
+              <h6>Offline : 13</h6>
             </div>
           </div>
           <div class="row">
-            <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+            <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <div class="row">
-                    <div class="col-9">
-                      <h5 class="card-title prima">Total Voltage</h5>
-                    </div>
-                    <div class="col-9">
-                      <div class="d-flex align-items-center align-self-start">
-                        <h3 class="mb-0 ">72.34 Volt</h3>
-                        <p class="text-success ml-2 mb-0 font-weight-medium">good</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-9">
-                      <h5 class="card-title">Current</h5>
-                    </div>
-                    <div class="col-9">
-                      <div class="d-flex align-items-center align-self-start">
-                        <h3 class="mb-0">1.00 Amps</h3>
-
-                        <!-- <p class="text-danger ml-2 mb-0 font-weight-medium">bad</p> -->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-9">
-                      <h5 class="card-title">Capacity</h5>
-                    </div>
-                    <div class="col-9">
-                      <div class="d-flex align-items-center align-self-start">
-                        <h3 class="mb-0">74 % / 14.84 Ah</h3>
-                        <p class="text-success ml-2 mb-0 font-weight-medium">good</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-9">
-                      <h5 class="card-title">Cycle</h5>
-                    </div>
-                    <div class="col-9">
-                      <div class="d-flex align-items-center align-self-start">
-                        <h3 class="mb-0">123 cycle</h3>
-                        <p class="text-warning ml-2 mb-0 font-weight-medium">warning</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Temperature</h4>
-                  <canvas id="transaction-history" class="transaction-chart"></canvas>
-                  <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
-                    <div class="text-md-center text-xl-left">
-                      <h6 class="mb-1">Temperature 1</h6>
-                    </div>
-                    <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
-                      <h6 class="font-weight-bold mb-0">29.5 °C</h6>
-                    </div>
-                  </div>
-                  <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
-                    <div class="text-md-center text-xl-left">
-                      <h6 class="mb-1">Temperature 2</h6>
-                    </div>
-                    <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
-                      <h6 class="font-weight-bold mb-0">23.3 °C</h6>
-                    </div>
-                  </div>
-                  <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
-                    <div class="text-md-center text-xl-left">
-                      <h6 class="mb-1">Temperature 3</h6>
-                    </div>
-                    <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
-                      <h6 class="font-weight-bold mb-0">23.3 °C</h6>
-                    </div>
-                  </div>
-                  <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
-                    <div class="text-md-center text-xl-left">
-                      <h6 class="mb-1">Temperature 4</h6>
-                    </div>
-                    <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
-                      <h6 class="font-weight-bold mb-0">23.3 °C</h6>
-                    </div>
-                  </div>
-                  <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
-                    <div class="text-md-center text-xl-left">
-                      <h6 class="mb-1">Temperature 5</h6>
-                    </div>
-                    <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
-                      <h6 class="font-weight-bold mb-0">23.3 °C</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-xl-4 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title ">Voltage Cell 1-10</h4>
-                  </p>
-                  <div class="table-responsive">
-                    <table class="table text-primary">
+                  <h4 class="card-title">Device Table</h4>
+                  <div>
+                    <!-- <table>
+                      <tbody>
+                        <tr>
+                          <td>Minimum date:</td>
+                          <td><input type="text" class="form-control form-control-sm" id="min" name="min"></td>
+                        </tr>
+                        <tr>
+                          <td>Maximum date:</td>
+                          <td><input type="text" class="form-control form-control-sm" id="max" name="max"></td>
+                        </tr>
+                      </tbody>
+                    </table> -->
+                    <table class="table table-striped table-bordered table-sm" id="example">
                       <thead>
                         <tr>
-                          <th style="color: white;">Cell</th>
-                          <th style="color: white;">Voltage</th>
+                          <th> Device </th>
+                          <th> Owner</th>
+                          <th> Online</th>
+                          <th> Rent</th>
+                          <th> Cycle </th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>1</td>
-                          <td>2.55</td>
+                          <td class="py-1">
+                            <a href="/device/0868755123661050">0868755123661050</a>
+                          </td>
+                          <td> Mr. A </td>
+                          <td>
+                            <label class="badge badge-success">Online</label>
+                          </td>
+                          <td>
+                            <h6 class="text-warning">PendingRent</h6>
+                          </td>
+                          <td> 15 </td>
                         </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>2.55</td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>2.55</td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>2.55</td>
-                        </tr>
-                        <tr>
-                          <td>5</td>
-                          <td>2.55</td>
-                        </tr>
-                        <tr>
-                          <td>6</td>
-                          <td>2.55</td>
-                        </tr>
-                        <tr>
-                          <td>7</td>
-                          <td>2.55</td>
-                        </tr>
-                        <tr>
-                          <td>8</td>
-                          <td>2.55</td>
-                        </tr>
-                        <tr>
-                          <td>9</td>
-                          <td>2.55</td>
-                        </tr>
-                        <tr>
-                          <td>10</td>
-                          <td>2.55</td>
-                        </tr>
+
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-12 col-xl-4 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Voltage Cell 11-20</h4>
-                  </p>
-                  <div class="table-responsive">
-                    <table class="table text-primary">
-                      <thead>
-                        <tr>
-                          <th style="color: white;">Cell</th>
-                          <th style="color: white;">Voltage</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>11</td>
-                          <td>2.55</td>
-                        </tr>
-                        <tr>
-                          <td>12</td>
-                          <td>2.55</td>
-                        </tr>
-                        <tr>
-                          <td>13</td>
-                          <td>2.55</td>
-                        </tr>
-                        <tr>
-                          <td>14</td>
-                          <td>2.55</td>
-                        </tr>
-                        <tr>
-                          <td>15</td>
-                          <td>2.55</td>
-                        </tr>
-                        <tr>
-                          <td>16</td>
-                          <td>2.55</td>
-                        </tr>
-                        <tr>
-                          <td>17</td>
-                          <td>2.55</td>
-                        </tr>
-                        <tr>
-                          <td>18</td>
-                          <td>2.55</td>
-                        </tr>
-                        <tr>
-                          <td>19</td>
-                          <td>2.55</td>
-                        </tr>
-                        <tr>
-                          <td>20</td>
-                          <td>2.55</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
+
           </div>
-
-
-          <div class="row">
-            <div class="col-md-6 col-xl-4 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex flex-row justify-content-between">
-                    <h4 class="card-title">Status</h4>
-                  </div>
-                  <div class="preview-list">
-                    <div class="preview-item border-bottom">
-                      <div class="preview-thumbnail">
-                      </div>
-                      <div class="preview-item-content d-flex flex-grow">
-                        <div class="flex-grow">
-                          <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                            <h6 class="preview-subject">Balanced State
-                            </h6>
-                          </div>
-                          <h7 class="text-warning">Not Started</h7>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="preview-item border-bottom">
-                      <div class="preview-thumbnail">
-                      </div>
-                      <div class="preview-item-content d-flex flex-grow">
-                        <div class="flex-grow">
-                          <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                            <h6 class="preview-subject">Protection Status</h6>
-                          </div>
-                          <h7 class="text-success">Normal</h7>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-xl-4 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex flex-row justify-content-between">
-                    <h4 class="card-title">Status</h4>
-                  </div>
-                  <div class="preview-list">
-                    <div class="preview-item border-bottom">
-                      <div class="preview-thumbnail">
-                      </div>
-                      <div class="preview-item-content d-flex flex-grow">
-                        <div class="flex-grow">
-                          <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                            <h6 class="preview-subject">Signal Intensity：
-                            </h6>
-                          </div>
-                          <h7 class="text-primary">Strong signal-G12</h7>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="preview-item border-bottom">
-                      <div class="preview-thumbnail">
-                      </div>
-                      <div class="preview-item-content d-flex flex-grow">
-                        <div class="flex-grow">
-                          <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                            <h6 class="preview-subject">Heart Time：</h6>
-                          </div>
-                          <h7 class="text-primary">2023-07-17 22:22:58</h7>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="preview-item border-bottom">
-                      <div class="preview-thumbnail">
-                      </div>
-                      <div class="preview-item-content d-flex flex-grow">
-                        <div class="flex-grow">
-                          <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                            <h6 class="preview-subject">Locating Time：</h6>
-                          </div>
-                          <h7 class="text-primary">2023-07-14 11:40:27</h7>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="preview-item border-bottom">
-                      <div class="preview-thumbnail">
-                      </div>
-                      <div class="preview-item-content d-flex flex-grow">
-                        <div class="flex-grow">
-                          <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                            <h6 class="preview-subject">Active Time：</h6>
-                          </div>
-                          <h7 class="text-primary">2023-05-29 16:22:59</h7>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="preview-item border-bottom">
-                      <div class="preview-thumbnail">
-                      </div>
-                      <div class="preview-item-content d-flex flex-grow">
-                        <div class="flex-grow">
-                          <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                            <h6 class="preview-subject">Register Time：</h6>
-                          </div>
-                          <h7 class="text-primary">2023-05-29 15:11:55</h7>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © KKUVolt
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com
               2020</span>
-
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a
+                href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin
+                templates</a> from Bootstrapdash.com</span>
           </div>
         </footer>
         <!-- partial -->
@@ -476,29 +156,60 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-
   <script src="assets/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
-  <script src="assets/vendors/chart.js/Chart.min.js"></script>
-  <!-- <script src="assets/vendors/progressbar.js/progressbar.min.js"></script> -->
-  <script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
-  <script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-  <script src="assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
   <!-- End plugin js for this page -->
   <!-- inject:js -->
   <script src="assets/js/off-canvas.js"></script>
   <script src="assets/js/hoverable-collapse.js"></script>
   <script src="assets/js/misc.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+  <script src="https://cdn.datatables.net/datetime/1.5.1/js/dataTables.dateTime.min.js"></script>
+
+  <script>
+    let minDate, maxDate;
+
+    // Custom filtering function which will search data in column four between two values
+    // DataTable.ext.search.push(function (settings, data, dataIndex) {
+    //   let min = minDate.val();
+    //   let max = maxDate.val();
+    //   let date = new Date(data[4]);
+
+    //   if (
+    //     (min === null && max === null) ||
+    //     (min === null && date <= max) ||
+    //     (min <= date && max === null) ||
+    //     (min <= date && date <= max)
+    //   ) {
+    //     return true;
+    //   }
+    //   return false;
+    // });
+
+    // // Create date inputs
+    // minDate = new DateTime('#min', {
+    //   format: 'MMMM Do YYYY'
+    // });
+    // maxDate = new DateTime('#max', {
+    //   format: 'MMMM Do YYYY'
+    // });
+
+    // DataTables initialisation
+    let table = new DataTable('#example');
+
+    // Refilter the table
+    document.querySelectorAll('#min, #max').forEach((el) => {
+      el.addEventListener('change', () => table.draw());
+    });
+  </script>
   <!-- endinject -->
   <!-- Custom js for this page -->
-  <script src="assets/js/dashboard.js"></script>
   <!-- End custom js for this page -->
-  <!-- <script src="assets/js/map.js"></script> -->
-  <script src="https://api.longdo.com/map/?key=ee3df186033ea8d7e94cf07758ee3db9"></script>
-
-
-
 </body>
 
 </html>

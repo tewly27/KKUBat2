@@ -73,7 +73,7 @@
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar p-0 fixed-top d-flex flex-row">
         <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/icon-mini.png"
+          <a class="navbar-brand brand-logo-mini" href=""><img src="assets/images/icon-mini.png"
               style="height: auto;width: auto;" alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
@@ -99,9 +99,9 @@
         <div class="content-wrapper">
           <div class="row">
             <div class="col">
-              <h3>IMEI:0868755125135442 </h3>
+              <h3 id="id">IMEI:0868755125135442 </h3>
               <label class="badge badge-success">Online</label>
-              <h7>21/06/2023 15:41:19</h7>
+              <h7 id="time">21/06/2023 15:41:19</h7>
             </div>
           </div>
           <div class="row">
@@ -114,7 +114,7 @@
                     </div>
                     <div class="col-9">
                       <div class="d-flex align-items-center align-self-start">
-                        <h3 class="mb-0 ">72.34 Volt</h3>
+                        <h3 class="mb-0 " id="voltage">72.34 Volt</h3>
                         <p class="text-success ml-2 mb-0 font-weight-medium">good</p>
                       </div>
                     </div>
@@ -131,7 +131,7 @@
                     </div>
                     <div class="col-9">
                       <div class="d-flex align-items-center align-self-start">
-                        <h3 class="mb-0">1.00 Amps</h3>
+                        <h3 class="mb-0" id="current">1.00 Amps</h3>
 
                         <!-- <p class="text-danger ml-2 mb-0 font-weight-medium">bad</p> -->
                       </div>
@@ -149,7 +149,7 @@
                     </div>
                     <div class="col-9">
                       <div class="d-flex align-items-center align-self-start">
-                        <h3 class="mb-0">74 % / 14.84 Ah</h3>
+                        <h3 class="mb-0" id="soc">74 % / 14.84 Ah</h3>
                         <p class="text-success ml-2 mb-0 font-weight-medium">good</p>
                       </div>
                     </div>
@@ -166,7 +166,7 @@
                     </div>
                     <div class="col-9">
                       <div class="d-flex align-items-center align-self-start">
-                        <h3 class="mb-0">123 cycle</h3>
+                        <h3 class="mb-0" id="cycle">123 cycle</h3>
                         <p class="text-warning ml-2 mb-0 font-weight-medium">warning</p>
                       </div>
                     </div>
@@ -186,7 +186,7 @@
                       <h6 class="mb-1">Temperature 1</h6>
                     </div>
                     <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
-                      <h6 class="font-weight-bold mb-0">29.5 °C</h6>
+                      <h6 class="font-weight-bold mb-0" id="temp1">29.5 °C</h6>
                     </div>
                   </div>
                   <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
@@ -194,7 +194,7 @@
                       <h6 class="mb-1">Temperature 2</h6>
                     </div>
                     <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
-                      <h6 class="font-weight-bold mb-0">23.3 °C</h6>
+                      <h6 class="font-weight-bold mb-0" id="temp2">23.3 °C</h6>
                     </div>
                   </div>
                   <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
@@ -202,23 +202,15 @@
                       <h6 class="mb-1">Temperature 3</h6>
                     </div>
                     <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
-                      <h6 class="font-weight-bold mb-0">23.3 °C</h6>
+                      <h6 class="font-weight-bold mb-0" id="temp3">23.3 °C</h6>
                     </div>
                   </div>
                   <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
                     <div class="text-md-center text-xl-left">
-                      <h6 class="mb-1">Temperature 4</h6>
+                      <h6 class="mb-1" id="temp1">Temperature 4</h6>
                     </div>
                     <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
-                      <h6 class="font-weight-bold mb-0">23.3 °C</h6>
-                    </div>
-                  </div>
-                  <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
-                    <div class="text-md-center text-xl-left">
-                      <h6 class="mb-1">Temperature 5</h6>
-                    </div>
-                    <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
-                      <h6 class="font-weight-bold mb-0">23.3 °C</h6>
+                      <h6 class="font-weight-bold mb-0" id="temp4">23.3 °C</h6>
                     </div>
                   </div>
                 </div>
@@ -240,43 +232,43 @@
                       <tbody>
                         <tr>
                           <td>1</td>
-                          <td>2.55</td>
+                          <td id="v1">2.55</td>
                         </tr>
                         <tr>
                           <td>2</td>
-                          <td>2.55</td>
+                          <td id="v2">2.55</td>
                         </tr>
                         <tr>
                           <td>3</td>
-                          <td>2.55</td>
+                          <td id="v3">2.55</td>
                         </tr>
                         <tr>
                           <td>4</td>
-                          <td>2.55</td>
+                          <td id="v4">2.55</td>
                         </tr>
                         <tr>
                           <td>5</td>
-                          <td>2.55</td>
+                          <td id="v5">2.55</td>
                         </tr>
                         <tr>
                           <td>6</td>
-                          <td>2.55</td>
+                          <td id="v6">2.55</td>
                         </tr>
                         <tr>
                           <td>7</td>
-                          <td>2.55</td>
+                          <td id="v7">2.55</td>
                         </tr>
                         <tr>
                           <td>8</td>
-                          <td>2.55</td>
+                          <td id="v8">2.55</td>
                         </tr>
                         <tr>
                           <td>9</td>
-                          <td>2.55</td>
+                          <td id="v9">2.55</td>
                         </tr>
                         <tr>
                           <td>10</td>
-                          <td>2.55</td>
+                          <td id="v10">2.55</td>
                         </tr>
                       </tbody>
                     </table>
@@ -300,43 +292,43 @@
                       <tbody>
                         <tr>
                           <td>11</td>
-                          <td>2.55</td>
+                          <td id="v11">2.55</td>
                         </tr>
                         <tr>
                           <td>12</td>
-                          <td>2.55</td>
+                          <td id="v12">2.55</td>
                         </tr>
                         <tr>
                           <td>13</td>
-                          <td>2.55</td>
+                          <td id="v13">2.55</td>
                         </tr>
                         <tr>
                           <td>14</td>
-                          <td>2.55</td>
+                          <td id="v14">2.55</td>
                         </tr>
                         <tr>
                           <td>15</td>
-                          <td>2.55</td>
+                          <td id="v15">2.55</td>
                         </tr>
                         <tr>
                           <td>16</td>
-                          <td>2.55</td>
+                          <td id="v16">2.55</td>
                         </tr>
                         <tr>
                           <td>17</td>
-                          <td>2.55</td>
+                          <td id="v17">2.55</td>
                         </tr>
                         <tr>
                           <td>18</td>
-                          <td>2.55</td>
+                          <td id="v18">2.55</td>
                         </tr>
                         <tr>
                           <td>19</td>
-                          <td>2.55</td>
+                          <td id="v19">2.55</td>
                         </tr>
                         <tr>
                           <td>20</td>
-                          <td>2.55</td>
+                          <td id="v20">2.55</td>
                         </tr>
                       </tbody>
                     </table>
@@ -364,7 +356,7 @@
                             <h6 class="preview-subject">Balanced State
                             </h6>
                           </div>
-                          <h7 class="text-warning">Not Started</h7>
+                          <h7 class="text-warning" id="balancestatus">0</h7>
                         </div>
                       </div>
                     </div>
@@ -376,7 +368,7 @@
                           <div class="d-flex d-md-block d-xl-flex justify-content-between">
                             <h6 class="preview-subject">Protection Status</h6>
                           </div>
-                          <h7 class="text-success">Normal</h7>
+                          <h7 class="text-success" id="protectstatus">Normal</h7>
                         </div>
                       </div>
                     </div>
@@ -384,7 +376,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+            <!-- <div class="col-md-6 col-xl-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-row justify-content-between">
@@ -455,7 +447,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
 
         </div>
@@ -496,7 +488,78 @@
   <!-- End custom js for this page -->
   <!-- <script src="assets/js/map.js"></script> -->
   <script src="https://api.longdo.com/map/?key=ee3df186033ea8d7e94cf07758ee3db9"></script>
+  <script>
 
+    let request2 = new XMLHttpRequest();
+
+    request2.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) {
+        const response = JSON.parse(this.responseText);
+        // console.log(response.records[0])
+        console.log(response)
+        document.getElementById("id").textContent = "IMEI:" + window.location.pathname.split('/')[2];
+        document.getElementById("time").textContent = response.rows[0].date;
+        document.getElementById("voltage").textContent = response.rows[0].packVoltage + " Volt";
+        document.getElementById("current").textContent = response.rows[0].packCurrent + " Amps";
+
+        document.getElementById("soc").textContent = response.rows[0].soc + " % " + " / " + response.rows[0].remaincap + " Ah";
+        document.getElementById("cycle").textContent = response.rows[0].cycle + ' cycle';
+
+        document.getElementById("temp1").textContent = response.rows[0].temp1 + ' °C';
+        document.getElementById("temp2").textContent = response.rows[0].temp2 + ' °C';
+        document.getElementById("temp3").textContent = response.rows[0].temp3 + ' °C';
+        document.getElementById("temp4").textContent = response.rows[0].temp4 + ' °C';
+        var a = (response.rows[0].temp1 + response.rows[0].temp2 + response.rows[0].temp3 + response.rows[0].temp4) / 4;
+        var b = 100 - (response.rows[0].temp1 + response.rows[0].temp2 + response.rows[0].temp3 + response.rows[0].temp4) / 4;
+        $("#transaction-history").areaData = {
+          labels: ["", "temp"],
+          datasets: [{
+            data: [b, a],
+            backgroundColor: [
+              "#111111", "#00d25b"
+            ]
+          }
+          ]
+        };
+
+        document.getElementById("v1").textContent = response.rows[0].cell1 ;
+        document.getElementById("v2").textContent = response.rows[0].cell2 ;
+        document.getElementById("v3").textContent = response.rows[0].cell3 ;
+        document.getElementById("v4").textContent = response.rows[0].cell4 ;
+        document.getElementById("v5").textContent = response.rows[0].cell5 ;
+        document.getElementById("v6").textContent = response.rows[0].cell6 ;
+        document.getElementById("v7").textContent = response.rows[0].cell7 ;
+        document.getElementById("v8").textContent = response.rows[0].cell8 ;
+        document.getElementById("v9").textContent = response.rows[0].cell9 ;
+        document.getElementById("v10").textContent = response.rows[0].cell10 ;
+        document.getElementById("v11").textContent = response.rows[0].cell11 ;
+        document.getElementById("v12").textContent = response.rows[0].cell12 ;
+        document.getElementById("v12").textContent = response.rows[0].cell13 ;
+        document.getElementById("v14").textContent = response.rows[0].cell14 ;
+        document.getElementById("v15").textContent = response.rows[0].cell15 ;
+        document.getElementById("v16").textContent = response.rows[0].cell16 ;
+        document.getElementById("v17").textContent = response.rows[0].cell17 ;
+        document.getElementById("v18").textContent = response.rows[0].cell18 ;
+        document.getElementById("v19").textContent = response.rows[0].cell19 ;
+        document.getElementById("v20").textContent = response.rows[0].cell20 ;
+
+        document.getElementById("balancestatus").textContent = response.rows[0].balancestatus;
+        document.getElementById("protectstatus").textContent = response.rows[0].protectstatus;
+        document.getElementById("balancestatus").textContent = response.rows[0].balancestatus;
+        document.getElementById("balancestatus").textContent = response.rows[0].balancestatus;
+
+
+        request3.open('GET', window.location.protocol + '//' + window.location.host + '/readGPS/' + response.rows[0].id, true);
+        deviceID = response.rows[0].id
+        request3.send();
+      }
+    };
+
+
+
+    request2.open('POST', window.location.protocol + '//' + window.location.host + '/batinfo1/' + (window.location.pathname ? window.location.pathname.split('/')[2] : '0868755123661050'), true);
+    request2.send();
+  </script>
 
 
 </body>

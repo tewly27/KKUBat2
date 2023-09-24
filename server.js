@@ -30,8 +30,6 @@ const pool = new Pool({
 });
 pool.connect();
 //////////////////
-app.use(express.static(__dirname + "/public"));
-app.use('/device/:tagID', express.static(__dirname + "/public"));
 
 
 const g2 = ["seconds", "minutes", "hours", "days", "weeks", "months", "year"];
@@ -45,6 +43,41 @@ app.get('/table', (req, res) => {
 app.get('/overview', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/overview.html'));
 });
+app.use(express.static(__dirname + "/public"));
+app.use('/device/:tagID', express.static(__dirname + "/public"));
+app.post('/batinfo1/:tagId', (req, res) => {
+  try {
+    var id = req.params.tagId
+
+    sample = 1
+    sub = 1
+    num_sample = 1
+    if (req.body.sub != null) {
+      sub = req.body.sub
+    }
+    if (req.body.sample != null) {
+      sample = req.body.sample
+    }
+    if (req.body.num_sample != null) {
+      num_sample = req.body.num_sample
+    }
+    if (req.body.id != null) {
+      id = req.body.id
+    }
+    var cells = " ";
+
+
+    sq = "select * from public.battery where id = " + id + " order by date + time desc limit  1";
+    pool.query(
+      sq,
+      (err, res2) => {
+
+        res.json(res2);
+      })
+  } catch (error) {
+    console.error(error)
+  }
+})
 
 app.post('/batinfo/:tagId', (req, res) => {
   try {
