@@ -44,7 +44,7 @@ Content-Type: application/json
 
 
 ###########
-POST   http://localhost:80/batinfo/46525684
+POST   http://34.143.215.47/batinfo/2
 
 
 

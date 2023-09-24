@@ -37,11 +37,15 @@ app.use('/device/:tagID', express.static(__dirname + "/public"));
 const g2 = ["seconds", "minutes", "hours", "days", "weeks", "months", "year"];
 
 app.get('/device/:tagID', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/index.html'));
+  res.sendFile(path.join(__dirname, '/public/device.html'));
 });
 app.get('/table', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/pages/tables/table.html'));
 });
+app.get('/overview', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/overview.html'));
+});
+
 app.post('/batinfo/:tagId', (req, res) => {
   try {
     var id = req.params.tagId
@@ -146,7 +150,7 @@ app.post('/addData', (req, res) => {
       "INSERT INTO public.battery (" + all_key + ") " +
       " VALUES (" + data_all + ")"
       , (err, res2) => {
-        res.json("600");
+        res.json(600);
       })
 
   } catch (error) {
