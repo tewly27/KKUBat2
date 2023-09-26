@@ -5,6 +5,11 @@ const app = express();
 const port = process.env.PORT || 8080;
 const https = require('https');
 const path = require('path');
+const date = require('date-and-time')
+
+// Creating object of current date and time 
+// by using Date() 
+const now = new Date();
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -13,8 +18,6 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cors({
   origin: '*'
 }));
-
-
 
 
 
@@ -125,6 +128,78 @@ app.post('/batinfo/:tagId', (req, res) => {
 
 
 
+app.post('/addRawData', (req, res) => {
+  // users.push(req.body)
+  let json = req.body
+  console.log(json)
+
+  // if (isNaN(Number(req.body.id))) {
+  //   return res.status(400).json({ err: "Numbers only, please!" });
+  // }
+  try {
+    var data = {
+      id: 0,
+      date: "'2023/05/18'",
+      time: "'13:50:10'",
+      voltage: 50.49,
+      current: 7.47,
+      cell1: 3.867,
+      cell2: 3.887,
+      cell3: 3.885,
+      cell4: 3.886,
+      cell5: 3.883,
+      cell6: 3.887,
+      cell7: 3.884,
+      cell8: 3.885,
+      cell9: 3.884,
+      cell10: 3.883,
+      cell11: 3.886,
+      cell12: 3.885,
+      cell13: 3.89,
+      avg_cell: 3.884,
+      max_cell: 3.89,
+      min_cell: 3.867,
+      soc: 67,
+      remaincap: 27000,
+      fcc: 40000,
+      cycle: 0,
+      temp1: 37.5,
+      temp2: 37.5,
+      temp3: 37.4,
+      temp4: 37.1,
+      c_fet: "'ON'",
+      d_fet: "'ON'",
+      protectstatus: "null",
+      balancestatus: 0
+    }
+
+    // console.log(json);
+    // data_all = ''
+
+    // json.date = "'"+date.format(now, 'YYYY/MM/DD')+"'";
+    // json.time = "'"+date.format(now, 'HH:mm:ss')+"'";
+
+    // all_key = ''
+    // Object.entries(json).forEach(([key, value]) => {
+    //   data_all += value + (key == 'balancestatus' ? '' : ',')
+    //   all_key += key + (key == 'balancestatus' ? '' : ',')
+    // });
+
+    // console.log("INSERT INTO public.battery (" + all_key + ") " +
+    //   " VALUES (" + data_all + ")")
+    // pool.query(
+    //   "INSERT INTO public.battery (" + all_key + ") " +
+    //   " VALUES (" + data_all + ")"
+    //   , (err, res2) => {
+    //     res.json(600);
+    //   })
+
+  } catch (error) {
+
+  }
+})
+
+
 app.post('/addData', (req, res) => {
   // users.push(req.body)
   let json = req.body
@@ -171,6 +246,10 @@ app.post('/addData', (req, res) => {
     }
 
     data_all = ''
+
+    json.date = "'"+date.format(now, 'YYYY/MM/DD')+"'";
+    json.time = "'"+date.format(now, 'HH:mm:ss')+"'";
+
     all_key = ''
     Object.entries(json).forEach(([key, value]) => {
       data_all += value + (key == 'balancestatus' ? '' : ',')
@@ -190,8 +269,6 @@ app.post('/addData', (req, res) => {
 
   }
 })
-
-
 app.listen(port, () => {
   console.log(`Starting node.js at port ${port}`);
 });
