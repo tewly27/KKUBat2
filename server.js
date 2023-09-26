@@ -191,7 +191,7 @@ app.post('/addRawData', (req, res) => {
     //   "INSERT INTO public.battery (" + all_key + ") " +
     //   " VALUES (" + data_all + ")"
     //   , (err, res2) => {
-    //     res.json(600);
+        res.json(600);
     //   })
 
   } catch (error) {

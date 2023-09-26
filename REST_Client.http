@@ -1,7 +1,7 @@
 
 
 
-POST http://34.143.215.47/addData
+POST http://localhost:80/addRawData
 Content-Type: application/json
 
 {
