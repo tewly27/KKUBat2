@@ -1,7 +1,16 @@
 
+POST http://34.143.215.47/addRawData
+Content-Type: application/json
+
+{
+  "rawData": "aaaaaaaasssasasc"
 
 
-POST http://localhost:80/addRawData
+}
+
+#############    
+
+POST http://34.143.215.47/addData
 Content-Type: application/json
 
 {

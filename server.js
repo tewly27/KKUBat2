@@ -191,7 +191,7 @@ app.post('/addRawData', (req, res) => {
     //   "INSERT INTO public.battery (" + all_key + ") " +
     //   " VALUES (" + data_all + ")"
     //   , (err, res2) => {
-        res.json(600);
+    res.send(600);
     //   })
 
   } catch (error) {
@@ -247,8 +247,8 @@ app.post('/addData', (req, res) => {
 
     data_all = ''
 
-    json.date = "'"+date.format(now, 'YYYY/MM/DD')+"'";
-    json.time = "'"+date.format(now, 'HH:mm:ss')+"'";
+    json.date = "'" + date.format(now, 'YYYY/MM/DD') + "'";
+    json.time = "'" + date.format(now, 'HH:mm:ss') + "'";
 
     all_key = ''
     Object.entries(json).forEach(([key, value]) => {

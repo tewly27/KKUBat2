@@ -376,6 +376,19 @@
                 </div>
               </div>
             </div>
+            <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+                  <div class="card  shadow h-100 py-2">
+                      <div class="card-body pb-0 pt-0" style="margin: auto;flex: none;">
+
+                          <img src="assets/images/co2.png" alt=""
+                              style="width:6rem;display: block; margin-left: auto;margin-right: auto;">
+                          <div class="h5 font-weight-bold text-gray-800" style="text-align: center;" id="carbon">
+                            72.34 Kg/h</div>
+                          <div class="h6 font-weight-bold text-gray-600" style="text-align: center;">
+                              CO<sub>2</sub> Emissions Saved</div>
+                      </div>
+                  </div>
+              </div>
             <!-- <div class="col-md-6 col-xl-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -547,6 +560,8 @@
         document.getElementById("protectstatus").textContent = response.rows[0].protectstatus;
         document.getElementById("balancestatus").textContent = response.rows[0].balancestatus;
         document.getElementById("balancestatus").textContent = response.rows[0].balancestatus;
+
+        document.getElementById("carbon").textContent = response.rows[0].current * response.rows[0].voltage * 1;
 
 
       }
