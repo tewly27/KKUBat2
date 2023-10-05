@@ -35,10 +35,11 @@ CREATE TABLE IF NOT EXISTS battery (
 	temp2 REAL,
 	temp3 REAL,
 	temp4 REAL,
+	temp5 REAL,
 	C_FET CHAR(3),
 	D_FET CHAR(3),
-	ProtectStatus SMALLINT,
-	BalanceStatus SMALLINT
+	ProtectStatus INTEGER,
+	BalanceStatus INTEGER
 
 );
 

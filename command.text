@@ -3,3 +3,10 @@ git pull
 sudo docker compose down
 sudo docker image rm kkubat2-webapp
 sudo docker compose up -d
+
+{
+  rawData: '221_3_0_42_26_26_0_0_3_71_23_112_0_0_46_217_0_0_0_0_0_0_148_14_1_20_5_11_169_11_182_11_177_11_178_11_180_0_0_0_23_112_3_71_0_0_248_144_119_
+  221_4_0_40_13_25_13_27_13_29_13_29_13_30_13_28_13_29_13_28_13_29_13_29_13_22_12_8_13_24_13_24_13_26_13_27_13_26_13_30_13_25_13_29_252_201_119_',
+  info: 'Manufacturer: INCORPORATED Model: A7670E-FASE Revision: A7670M7_V1.11.1 IMEI: 862205059261570 +GCAP: +CGSM,+FCLASS,+DS',
+  name: 'A7670E-FASE'
+}
