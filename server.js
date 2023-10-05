@@ -24,8 +24,8 @@ app.use(cors({
 
 //////////////////
 const pool = new Pool({
-  // host: 'local_pgdb',
-  host: 'localhost',
+  host: 'local_pgdb',
+  // host: 'localhost',
   database: 'admin',
   user: 'admin',
   password: 'k304298',
