@@ -413,7 +413,8 @@
                             <h6 class="preview-subject">dowload csv file：
                             </h6>
                           </div>
-                          <button type="button" class="btn btn-primary btn-rounded btn-fw" onclick="dowload()">Download</button>
+                          <button type="button" class="btn btn-primary btn-rounded btn-fw"
+                            onclick="dowload()">Download</button>
                         </div>
                       </div>
                     </div>
@@ -662,9 +663,12 @@
           const response = JSON.parse(this.responseText);
           console.log(response)
 
-
-
-          exportCSVFile(response.rows[0], response.rows, (window.location.pathname ? window.location.pathname.split('/')[2] : '0868755123661050'));
+          var headers = {};
+          for (var i in response.rows[0]) {
+            var key = i;
+            headers[key] = key;
+          }
+          exportCSVFile(headers, response.rows, (window.location.pathname ? window.location.pathname.split('/')[2] : '0868755123661050'));
 
 
         }
