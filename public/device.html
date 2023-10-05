@@ -413,7 +413,7 @@
                             <h6 class="preview-subject">dowload csv file：
                             </h6>
                           </div>
-                          <button type="button" class="btn btn-primary btn-rounded btn-fw">Download</button>
+                          <button type="button" class="btn btn-primary btn-rounded btn-fw" onclick="dowload()">Download</button>
                         </div>
                       </div>
                     </div>
@@ -535,8 +535,56 @@
   <!-- <script src="assets/js/map.js"></script> -->
   <script src="https://api.longdo.com/map/?key=ee3df186033ea8d7e94cf07758ee3db9"></script>
   <script>
+    function convertToCSV(objArray) {
+      var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+      var str = '';
+
+      for (var i = 0; i < array.length; i++) {
+        var line = '';
+        for (var index in array[i]) {
+          if (line != '') line += ','
+
+          line += array[i][index];
+        }
+
+        str += line + '\r\n';
+      }
+
+      return str;
+    }
+
+    function exportCSVFile(headers, items, fileTitle) {
+      if (headers) {
+        items.unshift(headers);
+      }
+
+      // Convert Object to JSON
+      var jsonObject = JSON.stringify(items);
+
+      var csv = this.convertToCSV(jsonObject);
+
+      var exportedFilenmae = fileTitle + '.csv' || 'export.csv';
+
+      var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      if (navigator.msSaveBlob) { // IE 10+
+        navigator.msSaveBlob(blob, exportedFilenmae);
+      } else {
+        var link = document.createElement("a");
+        if (link.download !== undefined) { // feature detection
+          // Browsers that support HTML5 download attribute
+          var url = URL.createObjectURL(blob);
+          link.setAttribute("href", url);
+          link.setAttribute("download", exportedFilenmae);
+          link.style.visibility = 'hidden';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+      }
+    }
 
     let request2 = new XMLHttpRequest();
+    let request3 = new XMLHttpRequest();
 
     request2.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -606,9 +654,21 @@
     request2.send();
 
     function dowload() {
-      request2.open('POST', window.location.protocol + '//' + window.location.host + '/batinfo1/' + (window.location.pathname ? window.location.pathname.split('/')[2] : '0868755123661050'), true);
-      request2.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-      request2.send(JSON.stringify({ "num_sample": 1000 }));
+      request3.open('POST', window.location.protocol + '//' + window.location.host + '/batinfo1/' + (window.location.pathname ? window.location.pathname.split('/')[2] : '0868755123661050'), true);
+      request3.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      request3.send(JSON.stringify({ "num_sample": 1000 }));
+      request3.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+          const response = JSON.parse(this.responseText);
+          console.log(response)
+
+
+
+          exportCSVFile(response.rows[0], response.rows, (window.location.pathname ? window.location.pathname.split('/')[2] : '0868755123661050'));
+
+
+        }
+      };
     }
   </script>
 
