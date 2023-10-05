@@ -133,7 +133,7 @@ app.post('/addRawData', (req, res) => {
   // users.push(req.body)
   let json = req.body
 
-  console.log(json)
+  // console.log(json)
 
   // if (isNaN(Number(req.body.id))) {
   //   return res.status(400).json({ err: "Numbers only, please!" });
@@ -302,8 +302,8 @@ app.post('/addRawData', (req, res) => {
     all_key += key + (key == 'balancestatus' ? '' : ',')
   });
 
-  // console.log("INSERT INTO public.battery (" + all_key + ") " +
-  //   " VALUES (" + data_all + ")")
+  console.log("INSERT INTO public.battery (" + all_key + ") " +
+    " VALUES (" + data_all + ")")
   pool.query(
     "INSERT INTO public.battery (" + all_key + ") " +
     " VALUES (" + data_all + ")"
