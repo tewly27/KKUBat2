@@ -401,7 +401,7 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-row justify-content-between">
-                    <h4 class="card-title">Status</h4>
+                    <h4 class="card-title">File</h4>
                   </div>
                   <div class="preview-list">
                     <div class="preview-item border-bottom">
@@ -410,15 +410,13 @@
                       <div class="preview-item-content d-flex flex-grow">
                         <div class="flex-grow">
                           <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                            <h6 class="preview-subject">Signal Intensity：
+                            <h6 class="preview-subject">dowload csv file：
                             </h6>
                           </div>
-                          <h7 class="text-primary">Strong signal-G12</h7>
-                          <button type="button" class="btn btn-primary btn-rounded btn-fw">Primary</button>
+                          <button type="button" class="btn btn-primary btn-rounded btn-fw">Download</button>
                         </div>
                       </div>
                     </div>
-
                   </div>
                 </div>
               </div>
@@ -606,6 +604,12 @@
 
     request2.open('POST', window.location.protocol + '//' + window.location.host + '/batinfo1/' + (window.location.pathname ? window.location.pathname.split('/')[2] : '0868755123661050'), true);
     request2.send();
+
+    function dowload() {
+      request2.open('POST', window.location.protocol + '//' + window.location.host + '/batinfo1/' + (window.location.pathname ? window.location.pathname.split('/')[2] : '0868755123661050'), true);
+      request2.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      request2.send(JSON.stringify({ "num_sample": 1000 }));
+    }
   </script>
 
 

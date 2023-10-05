@@ -71,7 +71,7 @@ app.post('/batinfo1/:tagId', (req, res) => {
     var cells = " ";
 
 
-    sq = "select * from public.battery where id = " + id + " order by date + time desc limit  1";
+    sq = "select * from public.battery where id = " + id + " order by date + time desc limit  " + num_sample;
     pool.query(
       sq,
       (err, res2) => {
