@@ -132,7 +132,8 @@ app.post('/batinfo/:tagId', (req, res) => {
 app.post('/addRawData', (req, res) => {
   // users.push(req.body)
   let json = req.body
-  // console.log(json)
+
+  console.log(json)
 
   // if (isNaN(Number(req.body.id))) {
   //   return res.status(400).json({ err: "Numbers only, please!" });
@@ -192,7 +193,7 @@ app.post('/addRawData', (req, res) => {
   data1.id = d.info.replace(/\D/g, '');
   data1.date = "'" + date.format(now, 'YYYY/MM/DD') + "'";
   data1.time = "'" + date.format(now, 'HH:mm:ss') + "'";
-
+  console.log(data1.time);
   aaa = d.rawData.split('_');
   aaa.shift(); // start
   aaa.shift(); // command
