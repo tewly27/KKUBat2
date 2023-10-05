@@ -207,10 +207,18 @@
                   </div>
                   <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
                     <div class="text-md-center text-xl-left">
-                      <h6 class="mb-1" id="temp1">Temperature 4</h6>
+                      <h6 class="mb-1">Temperature 4</h6>
                     </div>
                     <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
                       <h6 class="font-weight-bold mb-0" id="temp4">23.3 °C</h6>
+                    </div>
+                  </div>
+                  <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                    <div class="text-md-center text-xl-left">
+                      <h6 class="mb-1">Temperature 5</h6>
+                    </div>
+                    <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
+                      <h6 class="font-weight-bold mb-0" id="temp5">23.3 °C</h6>
                     </div>
                   </div>
                 </div>
@@ -344,7 +352,7 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-row justify-content-between">
-                    <h4 class="card-title">Status</h4>
+                    <h4 class="card-title">To CSV</h4>
                   </div>
                   <div class="preview-list">
                     <div class="preview-item border-bottom">
@@ -377,19 +385,46 @@
               </div>
             </div>
             <div class="col-md-6 col-xl-4 grid-margin stretch-card">
-                  <div class="card  shadow h-100 py-2">
-                      <div class="card-body pb-0 pt-0" style="margin: auto;flex: none;">
+              <div class="card  shadow h-100 py-2">
+                <div class="card-body pb-0 pt-0" style="margin: auto;flex: none;">
 
-                          <img src="assets/images/co2.png" alt=""
-                              style="width:6rem;display: block; margin-left: auto;margin-right: auto;">
-                          <div class="h5 font-weight-bold text-gray-800" style="text-align: center;" id="carbon">
-                            72.34 Kg/h</div>
-                          <div class="h6 font-weight-bold text-gray-600" style="text-align: center;">
-                              CO<sub>2</sub> Emissions Saved</div>
-                      </div>
-                  </div>
+                  <img src="assets/images/co2.png" alt=""
+                    style="width:6rem;display: block; margin-left: auto;margin-right: auto;">
+                  <div class="h5 font-weight-bold text-gray-800" style="text-align: center;" id="carbon">
+                    72.34 Kg/h</div>
+                  <div class="h6 font-weight-bold text-gray-600" style="text-align: center;">
+                    CO<sub>2</sub> Emissions Saved</div>
+                </div>
               </div>
-            <!-- <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+            </div>
+            <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-row justify-content-between">
+                    <h4 class="card-title">Status</h4>
+                  </div>
+                  <div class="preview-list">
+                    <div class="preview-item border-bottom">
+                      <div class="preview-thumbnail">
+                      </div>
+                      <div class="preview-item-content d-flex flex-grow">
+                        <div class="flex-grow">
+                          <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                            <h6 class="preview-subject">Signal Intensity：
+                            </h6>
+                          </div>
+                          <h7 class="text-primary">Strong signal-G12</h7>
+                          <button type="button" class="btn btn-primary btn-rounded btn-fw">Primary</button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-md-6 col-xl-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-row justify-content-between">
@@ -461,23 +496,23 @@
                 </div>
               </div>
             </div> -->
-          </div>
+        </div>
+
+      </div>
+      <!-- content-wrapper ends -->
+      <!-- partial:partials/_footer.html -->
+      <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+          <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © KKUVolt
+            2020</span>
 
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © KKUVolt
-              2020</span>
-
-          </div>
-        </footer>
-        <!-- partial -->
-      </div>
-      <!-- main-panel ends -->
+      </footer>
+      <!-- partial -->
     </div>
-    <!-- page-body-wrapper ends -->
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
@@ -522,8 +557,8 @@
         document.getElementById("temp2").textContent = response.rows[0].temp2 + ' °C';
         document.getElementById("temp3").textContent = response.rows[0].temp3 + ' °C';
         document.getElementById("temp4").textContent = response.rows[0].temp4 + ' °C';
-        var a = (response.rows[0].temp1 + response.rows[0].temp2 + response.rows[0].temp3 + response.rows[0].temp4) / 4;
-        var b = 100 - (response.rows[0].temp1 + response.rows[0].temp2 + response.rows[0].temp3 + response.rows[0].temp4) / 4;
+        var a = (response.rows[0].temp1 + response.rows[0].temp2 + response.rows[0].temp3 + response.rows[0].temp4 + response.rows[0].temp5) / 5;
+        var b = 100 - (response.rows[0].temp1 + response.rows[0].temp2 + response.rows[0].temp3 + response.rows[0].temp4 + response.rows[0].temp5) / 5;
         $("#transaction-history").areaData = {
           labels: ["", "temp"],
           datasets: [{
@@ -535,26 +570,26 @@
           ]
         };
 
-        document.getElementById("v1").textContent = response.rows[0].cell1 ;
-        document.getElementById("v2").textContent = response.rows[0].cell2 ;
-        document.getElementById("v3").textContent = response.rows[0].cell3 ;
-        document.getElementById("v4").textContent = response.rows[0].cell4 ;
-        document.getElementById("v5").textContent = response.rows[0].cell5 ;
-        document.getElementById("v6").textContent = response.rows[0].cell6 ;
-        document.getElementById("v7").textContent = response.rows[0].cell7 ;
-        document.getElementById("v8").textContent = response.rows[0].cell8 ;
-        document.getElementById("v9").textContent = response.rows[0].cell9 ;
-        document.getElementById("v10").textContent = response.rows[0].cell10 ;
-        document.getElementById("v11").textContent = response.rows[0].cell11 ;
-        document.getElementById("v12").textContent = response.rows[0].cell12 ;
-        document.getElementById("v12").textContent = response.rows[0].cell13 ;
-        document.getElementById("v14").textContent = response.rows[0].cell14 ;
-        document.getElementById("v15").textContent = response.rows[0].cell15 ;
-        document.getElementById("v16").textContent = response.rows[0].cell16 ;
-        document.getElementById("v17").textContent = response.rows[0].cell17 ;
-        document.getElementById("v18").textContent = response.rows[0].cell18 ;
-        document.getElementById("v19").textContent = response.rows[0].cell19 ;
-        document.getElementById("v20").textContent = response.rows[0].cell20 ;
+        document.getElementById("v1").textContent = response.rows[0].cell1;
+        document.getElementById("v2").textContent = response.rows[0].cell2;
+        document.getElementById("v3").textContent = response.rows[0].cell3;
+        document.getElementById("v4").textContent = response.rows[0].cell4;
+        document.getElementById("v5").textContent = response.rows[0].cell5;
+        document.getElementById("v6").textContent = response.rows[0].cell6;
+        document.getElementById("v7").textContent = response.rows[0].cell7;
+        document.getElementById("v8").textContent = response.rows[0].cell8;
+        document.getElementById("v9").textContent = response.rows[0].cell9;
+        document.getElementById("v10").textContent = response.rows[0].cell10;
+        document.getElementById("v11").textContent = response.rows[0].cell11;
+        document.getElementById("v12").textContent = response.rows[0].cell12;
+        document.getElementById("v12").textContent = response.rows[0].cell13;
+        document.getElementById("v14").textContent = response.rows[0].cell14;
+        document.getElementById("v15").textContent = response.rows[0].cell15;
+        document.getElementById("v16").textContent = response.rows[0].cell16;
+        document.getElementById("v17").textContent = response.rows[0].cell17;
+        document.getElementById("v18").textContent = response.rows[0].cell18;
+        document.getElementById("v19").textContent = response.rows[0].cell19;
+        document.getElementById("v20").textContent = response.rows[0].cell20;
 
         document.getElementById("balancestatus").textContent = response.rows[0].balancestatus;
         document.getElementById("protectstatus").textContent = response.rows[0].protectstatus;

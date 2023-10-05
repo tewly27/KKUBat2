@@ -296,7 +296,7 @@ app.post('/addRawData', (req, res) => {
 
 
     all_key = ''
-    Object.entries(json).forEach(([key, value]) => {
+    Object.entries(data1).forEach(([key, value]) => {
       data_all += value + (key == 'balancestatus' ? '' : ',')
       all_key += key + (key == 'balancestatus' ? '' : ',')
     });
