@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS battery (
-	id INTEGER,
+	id BIGSERIAL,
 	date date,
 	time time,
 	voltage REAL,
