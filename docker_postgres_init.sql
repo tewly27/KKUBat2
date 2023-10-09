@@ -44,7 +44,13 @@ CREATE TABLE IF NOT EXISTS battery (
 );
 
 CREATE TABLE IF NOT EXISTS batteryowner (
-	id INTEGER,
+	id BIGSERIAL,
+	name text
+
+);
+
+CREATE TABLE IF NOT EXISTS batteryList (
+	id BIGSERIAL,
 	name text
 
 );

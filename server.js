@@ -9,7 +9,7 @@ const date = require('date-and-time')
 
 // Creating object of current date and time 
 // by using Date() 
-const now = new Date();
+var now = new Date();
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -133,7 +133,7 @@ app.post('/addRawData', (req, res) => {
   // users.push(req.body)
   let json = req.body
 
-  // console.log(json)
+  console.log(json)
 
   // if (isNaN(Number(req.body.id))) {
   //   return res.status(400).json({ err: "Numbers only, please!" });
@@ -189,8 +189,11 @@ app.post('/addRawData', (req, res) => {
     protectstatus: "null",
     balancestatus: 0
   }
+
+  now = new Date();
   d.info = d.info.slice(d.info.indexOf('IMEI: '));
   data1.id = d.info.replace(/\D/g, '');
+  
   data1.date = "'" + date.format(now, 'YYYY/MM/DD') + "'";
   data1.time = "'" + date.format(now, 'HH:mm:ss') + "'";
   console.log(data1.time);
@@ -302,8 +305,8 @@ app.post('/addRawData', (req, res) => {
     all_key += key + (key == 'balancestatus' ? '' : ',')
   });
 
-  console.log("INSERT INTO public.battery (" + all_key + ") " +
-    " VALUES (" + data_all + ")")
+  // console.log("INSERT INTO public.battery (" + all_key + ") " +
+  //   " VALUES (" + data_all + ")")
   pool.query(
     "INSERT INTO public.battery (" + all_key + ") " +
     " VALUES (" + data_all + ")"
