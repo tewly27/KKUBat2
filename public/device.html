@@ -638,10 +638,8 @@
         document.getElementById("v19").textContent = response.rows[0].cell19;
         document.getElementById("v20").textContent = response.rows[0].cell20;
 
-        document.getElementById("balancestatus").textContent = response.rows[0].balancestatus;
-        document.getElementById("protectstatus").textContent = response.rows[0].protectstatus;
-        document.getElementById("balancestatus").textContent = response.rows[0].balancestatus;
-        document.getElementById("balancestatus").textContent = response.rows[0].balancestatus;
+        document.getElementById("balancestatus").textContent =  (response.rows[0].balancestatus >>> 0).toString(2);
+        document.getElementById("protectstatus").textContent = (response.rows[0].protectstatus >>> 0).toString(2);
 
         document.getElementById("carbon").textContent = response.rows[0].current * response.rows[0].voltage * 1;
 
