@@ -185,29 +185,29 @@ app.post('/addRawData', (req, res) => {
     time: "'13:50:10'",
     voltage: 50.49,
     current: 7.47,
-    cell1: 3.867,
-    cell2: 3.887,
-    cell3: 3.885,
-    cell4: 3.886,
-    cell5: 3.883,
-    cell6: 3.887,
-    cell7: 3.884,
-    cell8: 3.885,
-    cell9: 3.884,
-    cell10: 3.883,
-    cell11: 3.886,
-    cell12: 3.885,
-    cell13: 3.89,
-    cell14: 3.884,
-    cell15: 3.883,
-    cell16: 3.886,
-    cell17: 3.885,
-    cell18: 3.89,
-    cell19: 3.885,
-    cell20: 3.89,
-    avg_cell: 3.884,
-    max_cell: 3.89,
-    min_cell: 3.867,
+    cell1: 0,
+    cell2: 0,
+    cell3: 0,
+    cell4: 0,
+    cell5: 0,
+    cell6: 0,
+    cell7: 0,
+    cell8: 0,
+    cell9: 0,
+    cell10: 0,
+    cell11: 0,
+    cell12: 0,
+    cell13: 0,
+    cell14: 0,
+    cell15: 0,
+    cell16: 0,
+    cell17: 0,
+    cell18: 0,
+    cell19: 0,
+    cell20: 0,
+    avg_cell: 0,
+    max_cell: 0,
+    min_cell: 0,
     soc: 67,
     remaincap: 27000,
     fcc: 40000,
@@ -313,7 +313,7 @@ app.post('/addRawData', (req, res) => {
   data1.temp5 += parseInt(aaa.shift());  // 36
   data1.temp5 = (data1.temp5 - 2731) / 10;
 
-  len1 -= 29;
+  len1 -= 30;
   for (let index = 0; index < len1; index++) {
     aaa.shift(); // rm x 12
   }
@@ -321,9 +321,10 @@ app.post('/addRawData', (req, res) => {
   aaa.shift(); // start
   aaa.shift(); // command
   aaa.shift(); // err
+  var len2 = parseInt(aaa.shift()); // 3
 
   // 4
-  for (let i = 1; i <= 20; i++) {
+  for (let i = 1; i <= len2/2; i++) {
     data1['cell' + i] = 256 * parseInt(aaa.shift());
     data1['cell' + i] += parseInt(aaa.shift());
     data1['cell' + i] = parseFloat((data1['cell' + i] / 1000).toFixed(3));

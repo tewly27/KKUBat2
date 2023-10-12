@@ -8,6 +8,18 @@ Content-Type: application/json
   "name": "A7670E-FASE"
 }
 
+
+
+########
+
+
+POST http://34.143.215.47/batsql
+Content-Type: application/json
+
+{
+  "sql": "select * from public.battery where id = 862205059261570 order by date + time limit  1000"
+
+}
 #############    
 
 POST http://34.143.215.47/addData
