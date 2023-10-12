@@ -82,6 +82,39 @@ app.post('/batinfo1/:tagId', (req, res) => {
     console.error(error)
   }
 })
+app.post('/batsql', (req, res) => {
+  try {
+    var id = req.params.tagId
+
+    sample = 1
+    sub = 1
+    num_sample = 1
+    if (req.body.sub != null) {
+      sub = req.body.sub
+    }
+    if (req.body.sample != null) {
+      sample = req.body.sample
+    }
+    if (req.body.num_sample != null) {
+      num_sample = req.body.num_sample
+    }
+    if (req.body.id != null) {
+      id = req.body.id
+    }
+    var cells = " ";
+
+
+    sq = req.body.sql;
+    pool.query(
+      sq,
+      (err, res2) => {
+
+        res.json(res2);
+      })
+  } catch (error) {
+    console.error(error)
+  }
+})
 
 app.post('/batinfo/:tagId', (req, res) => {
   try {
@@ -193,7 +226,7 @@ app.post('/addRawData', (req, res) => {
   now = new Date();
   d.info = d.info.slice(d.info.indexOf('IMEI: '));
   data1.id = d.info.replace(/\D/g, '');
-  
+
   data1.date = "'" + date.format(now, 'YYYY/MM/DD') + "'";
   data1.time = "'" + date.format(now, 'HH:mm:ss') + "'";
   console.log(data1.time);
@@ -305,8 +338,8 @@ app.post('/addRawData', (req, res) => {
     all_key += key + (key == 'balancestatus' ? '' : ',')
   });
 
-  // console.log("INSERT INTO public.battery (" + all_key + ") " +
-  //   " VALUES (" + data_all + ")")
+  console.log("INSERT INTO public.battery (" + all_key + ") " +
+    " VALUES (" + data_all + ")")
   pool.query(
     "INSERT INTO public.battery (" + all_key + ") " +
     " VALUES (" + data_all + ")"
